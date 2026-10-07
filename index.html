@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Hero motion test · The Talent Dept.</title><link rel="icon" href="logo.svg">
+<style>
+  :root{--cream:#F2EEE5;--ink:#171614;--quiet:#96938D;--red:#D65A4A;--line:rgba(23,22,20,.14);--chip:#E2D9C9}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--cream);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;padding:40px clamp(20px,4vw,72px) 120px}
+  header{display:flex;justify-content:space-between;align-items:flex-start}
+  header img{height:46px;display:block}
+  header span{font-size:14px;line-height:1;padding:9px 12px 8px;border-radius:3px;background:var(--chip)}
+  h1{font-weight:300;font-size:clamp(52px,8vw,132px);letter-spacing:-.04em;line-height:.98;margin:clamp(64px,10vw,140px) 0 22px}
+  h1 i{font-style:normal;color:var(--red)}
+  .lede{font-size:clamp(18px,1.6vw,22px);line-height:1.42;color:#5b5853;max-width:820px}
+  section{margin-top:clamp(64px,8vw,110px)}
+  h2{font-weight:300;font-size:clamp(30px,3vw,44px);letter-spacing:-.025em;padding-top:18px;border-top:1px solid var(--line);margin-bottom:26px}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+  @media (max-width:1300px){ .row{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:900px){ .row{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .row{grid-template-columns:1fr} }
+  a.opt{color:inherit;text-decoration:none;display:block}
+  a.opt .im{aspect-ratio:16/9;overflow:hidden;outline:1px solid var(--line);outline-offset:-1px;background:#e9e4d9}
+  a.opt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.22,1,.36,1)}
+  a.opt:hover img{transform:scale(1.035)}
+  a.opt .n{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}
+  a.opt .n b{font-weight:300;font-size:26px;letter-spacing:-.02em}
+  a.opt .n em{font-style:normal;font-size:14px;padding:8px 10px 7px;border-radius:3px;background:var(--chip);transition:background .4s cubic-bezier(.22,1,.36,1)}
+  a.opt:hover .n em{background:var(--ink);color:var(--cream)}
+  a.opt p{font-size:17px;color:#5b5853;margin-top:4px}
+  a.opt .pr{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  a.opt .pr span{font-size:13px;line-height:1;padding:7px 9px 6px;border-radius:3px;border:1px solid var(--line);color:#5b5853}
+  .phone{display:none;margin-top:16px;font-size:15px;color:var(--quiet)}
+  @media (max-width:820px){ .phone{display:block} }
+</style></head>
+<body>
+<header><img src="logo.svg" alt="The Talent Dept."><span>Hero motion test</span></header>
+<h1>Two moments, five ways each<i>.</i></h1>
+<p class="lede">The two from the last round: Speak Up, at scale, for the hero, and Line of Sight, for the second moment. Each one five ways, each a short story told by scroll and built on the classic principles of animation: a small move back before every big move, an overshoot and settle when things land, shapes that stretch with your speed and squash when they stop, paths that curve, and a follow-through when you stop scrolling. Line of Sight is now built from the line itself, written in Morse code on one grid: a dot is one unit, a dash three, and nothing floats. Signals key on, grow a unit at a time, or step along one line and lock. The lines along the way come from the brand book. The waveform studies from the last round are here too: in each, the headline's red full stop drops into the bar wall and changes it. Open an option and scroll slowly; the numbers at the bottom switch between them.</p>
+<p class="phone">Best seen on a laptop or desktop.</p>
+<section><h2>Speak Up, at scale</h2><div class="row" id="h"></div></section>
+<section><h2>Line of Sight</h2><div class="row" id="v"></div></section>
+<section><h2>Waveform studies</h2><div class="row" id="w"></div></section>
+<script>
+const L=[['01','SU1','Grow','The word grows out of the sentence.'],['02','SU2','Pan','The word runs past. The full stop stays.'],['03','SU3','Read aloud','The sentence, read word by word.'],['04','SU4','Three scales','Different perspectives. One conversation.'],['05','SU5','Into the o','Into the word. Inside, the o is three dashes in Morse, and the word keys on from there.'],
+         ['06','LS0','Walk through','As in the deck: you move forward through dashes, each at its own depth. At one point they lock into the statement and reply rows, then you pass through.'],['07','LS1','Unison','Six rows of the same word, out of time, step into time. Their pauses line up into one clear aisle.'],['08','LS2','Over to you','A statement is sent in Morse code. Only when it signs off "over to you" does the reply answer.'],['09','LS3','Me to we','In Morse, one red dot turns ME into WE. The line makes room, and the whole field follows.'],['10','LS4','Lines','Every signal starts as a dot and grows into a line. Then the pauses open and the lines become the message.'],['11','LS5','Gather','Scattered signals step home across the grid, nearest first, around the one red dot.'],
+         ['12','W1','Pace','An even row regroups into phrases and pauses. The full stop drops into the pause.'],['13','W2','Gather','The full stop drops into the row, and the bars swap places so the tallest stand beside it.'],['14','W3','Weight','The same rule as the type: the nearer the full stop, the heavier the bar.'],['15','W4','Step in','You step into the waveform around the full stop until the bars are architecture.']];
+const PR={SU1:['Anticipation','Arcs','Squash and stretch'],SU2:['Anticipation','Drag and follow-through','Squash and stretch'],
+  SU3:['Squash and stretch','Overlapping action','Secondary action'],SU4:['Anticipation','Overshoot and settle','Overlapping action'],
+  SU5:['Anticipation','Arcs','Exaggeration'],LS0:['Slow in and slow out','Staging','Timing'],LS1:['Anticipation','Overshoot and settle','Timing'],
+  LS2:['Timing','Staging','Overlapping action'],LS3:['Overlapping action','Overshoot and settle','Staging'],
+  LS4:['Slow in and slow out','Overlapping action','Staging'],LS5:['Anticipation','Overshoot and settle','Follow-through'],
+  W1:['Anticipation','Overlapping action','Staging'],W2:['Overlapping action','Overshoot and settle','Staging'],
+  W3:['Timing','Follow-through','Staging'],W4:['Timing','Exaggeration','Staging']};
+const tile=([n,id,name,story])=>`<a class="opt" href="${n}.html"><div class="im"><img src="stills/${id}.jpg" alt=""></div><div class="n"><b>${name}</b><em>Option ${n}</em></div><p>${story}</p><div class="pr">${PR[id].map(x=>`<span>${x}</span>`).join('')}</div></a>`;
+document.getElementById('h').innerHTML=L.slice(0,5).map(tile).join('');
+document.getElementById('v').innerHTML=L.slice(5,11).map(tile).join('');
+document.getElementById('w').innerHTML=L.slice(11).map(tile).join('');
+</script>
+</body></html>
